@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "AMFinder",
+  "name": "AM~ Finder",
+  "authors": [ "Ars_Mond" ],
+  "description": "",
+  "version": "1.1.2",
+  "dependency": {
+    "game": "1.16.5"
+  }
+}

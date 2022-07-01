@@ -37,7 +37,7 @@
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
         <Reference Include="VintagestoryAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Games\Vintage Story\VintagestoryAPI.dll</HintPath>
+          <HintPath>..\Library\VintagestoryAPI.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>

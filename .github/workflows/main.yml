@@ -2,13 +2,14 @@ name: AMFinder Build
 
 on:
   push:
-    branches: master
+    branches: [ master ]
   pull_request:
-    branches: master
+    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: [ windows-latest ]
 
     steps:
       - uses: actions/checkout@v2

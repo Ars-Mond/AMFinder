@@ -39,6 +39,12 @@
         <Reference Include="VintagestoryAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\Library\VintagestoryAPI.dll</HintPath>
         </Reference>
+        <Reference Include="VintagestoryLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\VintagestoryLib.dll</HintPath>
+        </Reference>
+        <Reference Include="VSBuildLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\VSBuildLib.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CheckBlockCommand.cs" />

@@ -3,7 +3,7 @@
   "modid": "AMFinder",
   "name": "AM~ Finder",
   "authors": [ "Ars_Mond" ],
-  "description": "",
+  "description": "A mod for finding a block within a certain radius of the player.",
   "version": "1.1.5",
   "dependency": {
     "game": "1.16.5"

@@ -14,7 +14,7 @@ namespace AMFinder
         {
             Command = "FindBlock";
             Description = "Shows the NameId of the block the character is looking at. ";
-            Syntax = ".findblock <NameID>";
+            Syntax = ".findblock <NameID> <Size>";
         }
 
         public override void CallHandler(IPlayer player, int groupId, CmdArgs args)
@@ -22,24 +22,25 @@ namespace AMFinder
             try
             {
                 Api.ShowChatMessage("======== FindBlock ========");
-                if (args.Length != 1)
+                if (args.Length != 2)
                 {
-                    Api.ShowChatMessage("Error: The Argument is null!");
+                    Api.ShowChatMessage("Error: There are not enough arguments or they are not defined correctly!");
                     Api.ShowChatMessage($"Syntax: {Syntax}");
                     
                     return;
                 }
                 var worldBlockAccessor = Api.World.BlockAccessor;
                 var blockPos = Api.World.Player.CurrentBlockSelection.Position;
+                int size = Int32.Parse(args[1]);
 
-                BlockPos temp = new BlockPos(blockPos.X - 10, blockPos.Y - 10, blockPos.Z - 10);
+                BlockPos temp = new BlockPos(blockPos.X - size / 2, blockPos.Y - size / 4 * 3, blockPos.Z - size / 2);
                 List<string> list = new List<string>();
                 
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < size; i++)
                 {
-                    for (int j = 0; j < 20; j++)
+                    for (int j = 0; j < size; j++)
                     {
-                        for (int k = 0; k < 20; k++)
+                        for (int k = 0; k < size; k++)
                         {
                             var t = worldBlockAccessor.GetBlock(temp.X + i, temp.Y + j, temp.Z + k).Code.Path;
                             

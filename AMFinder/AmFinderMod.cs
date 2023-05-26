@@ -16,11 +16,6 @@ namespace AMFinder
             _checkBlockCommand = new CheckBlockCommand();
         }
 
-        public override bool ShouldLoad(EnumAppSide forSide)
-        {
-            return forSide == EnumAppSide.Client;
-        }
-
         public override void StartClientSide(ICoreClientAPI api)
         {
             base.StartClientSide(api);

@@ -21,10 +21,9 @@ namespace AMFinder
                var worldBlockAccessor = Api.World.BlockAccessor;
                var blockPos = Api.World.Player.CurrentBlockSelection.Position;
                var block = worldBlockAccessor.GetBlock(blockPos);
-               ;
+               
                Api.ShowChatMessage("========CheckBlock========");
-               Api.ShowChatMessage( Format("NameID block", block.Code.Path) );
-               Api.ShowChatMessage( Format("NumberID block", block.Id.ToString()) );
+               Api.ShowChatMessage(Format("NameID block", block.Code.Path) + "\n");
             }
             catch (Exception e)
             {

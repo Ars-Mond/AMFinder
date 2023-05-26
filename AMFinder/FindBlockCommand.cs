@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using AMFinder.Properties;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
@@ -42,13 +41,14 @@ namespace AMFinder
                 }
                 
                 var worldBlockAccessor = Api.World.BlockAccessor;
-                var spawnPosition = _spawnPosition; //Api.World.DefaultSpawnPosition.AsBlockPos;
-                var playerPosition = _playerPosition; //Api.World.Player.Entity.Pos.AsBlockPos; //Api.World.Player.CurrentBlockSelection.Position;
+                //Api.World.DefaultSpawnPosition.AsBlockPos;
+                //Api.World.Player.Entity.Pos.AsBlockPos;
+                //Api.World.Player.CurrentBlockSelection.Position;
                 
                 
-                Api.ShowChatMessage($"{spawnPosition}, {playerPosition}");
+                //Api.ShowChatMessage($"{_spawnPosition}, {_playerPosition}");
 
-                spawnPosition.Y = 0;
+                _spawnPosition.Y = 0;
 
                 int size = 0;
                 try
@@ -57,11 +57,12 @@ namespace AMFinder
                 }
                 catch (Exception e)
                 {
-                    Api.ShowChatMessage("Error: The size must be an integer number.!\n");
+                    Api.ShowChatMessage("Error: The size must be an integer number!\n");
                     Api.World.Logger.Debug($"{e}");
+                    return;
                 }
 
-                BlockPos centerSearchPosition = new BlockPos(playerPosition.X - size / 2, playerPosition.Y - size / 4 * 3, playerPosition.Z - size / 2);
+                BlockPos centerSearchPosition = new BlockPos(_playerPosition.X - size / 2, _playerPosition.Y - size / 4 * 3, _playerPosition.Z - size / 2);
                 List<string> list = new List<string>();
                 
                 for (int x = 0; x < size; x++)
@@ -72,7 +73,7 @@ namespace AMFinder
                         {
                             var t = worldBlockAccessor.GetBlock(centerSearchPosition.X + x, centerSearchPosition.Y + y, centerSearchPosition.Z + z).Code.Path;
                             
-                            if (t == args[0]) list.Add((centerSearchPosition + new BlockPos(x, y, z) - spawnPosition).ToString());
+                            if (t == args[0]) list.Add((centerSearchPosition + new BlockPos(x, y, z) - _spawnPosition).ToString());
                         }
                     }
                 }
@@ -87,6 +88,8 @@ namespace AMFinder
                 {
                     Api.ShowChatMessage($"Cords: [ {item} ]");
                 }
+                
+                Api.ShowChatMessage("\n");
             }
             catch (Exception e)
             {

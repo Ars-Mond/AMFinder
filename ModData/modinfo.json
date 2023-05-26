@@ -5,7 +5,9 @@
   "authors": [ "Ars_Mond" ],
   "description": "A mod for finding a block within a certain radius of the player!",
   "version": "1.3.0",
+  "side": "client",
   "dependency": {
-    "game": "1.16.5"
-  }
+    "game": "1.18.3"
+  },
+  "website": "https://github.com/Ars-Mond/AMFinder/issues"
 }

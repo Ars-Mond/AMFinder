@@ -32,7 +32,7 @@ namespace AMFinder
             _coreClientApi.RegisterCommand(_findBlockCommand);
             _coreClientApi.RegisterCommand(_checkBlockCommand);
             
-            _coreClientApi.ShowChatMessage("AM~Finder load!");
+            _coreClientApi.ShowChatMessage("AM~Finder load!\n");
         }
     }
 }

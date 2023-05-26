@@ -89,7 +89,7 @@ namespace AMFinder
                     Api.ShowChatMessage($"Cords: [ {item} ]");
                 }
                 
-                Api.ShowChatMessage("\n");
+                Api.ShowChatMessage("");
             }
             catch (Exception e)
             {
